@@ -43,7 +43,7 @@ public class ThreeSumPerformance {
             for(int j = i +1; j< len; j++)                                  // control index of second element in triple
                 for(int k = j+1; k < len; k++) {                            // control index of third element in triple
                     if ((testList[i] + testList[j] + testList[k]) == 0)     // check if sum is zero
-                        count++;                                            // incrment count if true
+                        count++;                                            // increment count if true
                 }
         return count;
     }
@@ -106,13 +106,13 @@ public class ThreeSumPerformance {
         resultsWriter.println("#InputSize    AverageTime");                                             // # marks a comment in gnuplot data 
         resultsWriter.flush();
 
-        for(int inputSize=MININPUTSIZE;inputSize<=MAXINPUTSIZE; inputSize*= 2) {                        // for each size of input we want to test: in this case starting small and doubling the size each time
+        for(int inputSize=MININPUTSIZE;inputSize<=MAXINPUTSIZE; inputSize*= 2) {                        // for each size of input we want to test: stating at MININPUTSIZE and doubling each iteration until reaching MAXINPUTSIZE
 
             System.out.println("Running test for input size "+inputSize+" ... ");                       // progress message... 
             System.out.print("    Running trial batch...");
             long batchElapsedTime = 0;                                                                  // reset elapsed time for the batch to 0
 
-            System.gc();                                                                                //force garbage collection before each batch of trials run so it is not included in the time
+            System.gc();                                                                                // force garbage collection before each batch of trials run
 
             // repeat for desired number of trials (for a specific size of input)...
             for (long trial = 0; trial < numberOfTrials; trial++) {                                     // run the trials 
